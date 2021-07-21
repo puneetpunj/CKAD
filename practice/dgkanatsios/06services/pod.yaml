@@ -1,0 +1,165 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-06-28T01:41:33Z"
+  labels:
+    run: busybox
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:run: {}
+      f:spec:
+        f:containers:
+          k:{"name":"busybox"}:
+            .: {}
+            f:args: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl-run
+    operation: Update
+    time: "2021-06-28T01:41:33Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"172.17.0.9"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-06-28T01:41:39Z"
+  name: busybox
+  namespace: default
+  resourceVersion: "779020"
+  selfLink: /api/v1/namespaces/default/pods/busybox
+  uid: a443974f-6f16-4749-a05b-d293c76bb865
+spec:
+  containers:
+  - args:
+    - sleep
+    - "3600"
+    image: busybox
+    imagePullPolicy: Always
+    name: busybox
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-tn28t
+      readOnly: true
+  - args:
+    - sleep
+    - "3600"
+    image: busybox
+    imagePullPolicy: Always
+    name: busybox2
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-tn28t
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-tn28t
+    secret:
+      defaultMode: 420
+      secretName: default-token-tn28t
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T01:41:33Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T01:41:39Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T01:41:39Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T01:41:33Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://6ef6c9ee9327b19bf8ef4ffa2fb495b36e88e90ca31f867cc647989d9dff1bab
+    image: busybox:latest
+    imageID: docker-pullable://busybox@sha256:930490f97e5b921535c153e0e7110d251134cc4b72bbb8133c6a5065cc68580d
+    lastState: {}
+    name: busybox
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-06-28T01:41:39Z"
+  hostIP: 192.168.64.2
+  phase: Running
+  podIP: 172.17.0.9
+  podIPs:
+  - ip: 172.17.0.9
+  qosClass: BestEffort
+  startTime: "2021-06-28T01:41:33Z"

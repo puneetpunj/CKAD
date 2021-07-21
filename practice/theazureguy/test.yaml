@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test
+  name: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test
+  strategy: {}
+  template:
+    metadata:
+	  creationTimestamp: null
+	  labels:
+	    run: sqlsvr
+	  name: sqlsvr
+	spec:
+	  containers:
+	  - image: nginx
+	    name: sqlsvr
+	    envFrom:
+	     - configMapRef:
+		 name: db-config
+	    resources: {}
+	  dnsPolicy: ClusterFirst
+	  restartPolicy: Always
+	status: {}
